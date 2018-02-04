@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Books</h1>
+</div>
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active">
+    <a href="#">Home</a>
+  </li>
+  <li role="presentation">
+    <a [routerLink]="['/book-create']">Add New Book</a>
+  </li>
+</ul>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>
+          <a [routerLink]="['/book-details', book._id]">Show Detail</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

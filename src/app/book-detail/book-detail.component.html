@@ -1,0 +1,72 @@
+<div class="page-header">
+    <h1>Books</h1>
+  </div>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation">
+        <a [routerLink]="['/books']">Home</a>
+    </li>
+    <li role="presentation">
+      <a [routerLink]="['/book-create']">Add New Book</a>
+    </li>
+  </ul>
+  
+
+<div class="container">
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ book.title }}</h3>
+      </div>
+      <div class="panel-body">
+        <dl class="list">
+          <dt>ISBN</dt>
+          <dd>{{ book.isbn }}</dd>
+          <dt>Author</dt>
+          <dd>{{ book.author }}</dd>
+          <dt>Publisher</dt>
+          <dd>{{ book.publisher }}</dd>
+          <dt>Price</dt>
+          <dd>{{ book.price }}</dd>
+          <dt>Update Date</dt>
+          <dd>{{ book.updated_at }}</dd>
+        </dl>
+
+        <div class="btn-toolbar">
+            <a [routerLink]="['/book-edit', book._id]" class="btn btn-lg btn-success">Edit</a>
+            <button class="btn btn-lg btn-danger" type="button" (click)="deleteBook(book._id)">Delete</button>
+            <a [routerLink]="['/books']" class="btn btn-lg btn-default">Go Back</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="container">
+  <h1>{{ book.title }}</h1>
+  <dl class="list">
+    <dt>ISBN</dt>
+    <dd>{{ book.isbn }}</dd>
+    <dt>Author</dt>
+    <dd>{{ book.author }}</dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher }}</dd>
+    <dt>Price</dt>
+    <dd>{{ book.price }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ book.updated_at }}</dd>
+  </dl>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/book-edit', book._id]" class="btn btn-lg btn-success">Edit</a>
+      <button class="btn btn-lg btn-danger" type="button" (click)="deleteBook(book._id)">Delete</button>
+    </div>
+    <div class="col-md-12">
+      <a [routerLink]="['/books']" class="btn btn-lg btn-default">Go Back</a>
+    </div>
+  </div>
+</div>
+-->
